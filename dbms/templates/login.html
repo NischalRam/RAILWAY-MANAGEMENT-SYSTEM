@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<style>
+    body {
+        margin: 0px;
+        padding: 0px;
+        background: url('https://raw.githubusercontent.com/NischalRam/other-/master/wp3879680-bullet-train-wallpapers.jpg');
+        background-size: cover;
+    }
+
+    .form {
+        border: 2px solid rgb(0, 0, 0);
+    margin: 135px 259px;
+    padding: 114px 71px;
+    border-radius: 28px;
+
+    }
+
+    .form_data input {
+        
+        font-size: 20px;
+        text-align: center;
+        border: 1px solid;
+        padding: 5px;
+        border-radius: 10px;
+    }
+</style>
+
+<body>
+    <center>
+        <div class="form">
+            <form action="login" method="post">
+                {% csrf_token %}
+                <h2>login now</h2>
+                <div class="form_data">
+
+                    <input type="text" name="username" placeholder="username"><br>
+                    <br>
+                    <input type="password" name="password" placeholder="password"><br>
+                    <br>
+                    <input type="Submit">
+                </div>
+            </form>
+
+
+            <div>
+                {% for message in messages %}
+                <h3> {{message}} </h3>
+                {% endfor %}
+            </div>
+        </div>
+    </center>
+</body>
+
+</html>
